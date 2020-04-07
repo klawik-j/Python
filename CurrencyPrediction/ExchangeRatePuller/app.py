@@ -21,7 +21,7 @@ def ExchangeRatePuller(table_type, currency_code, top_count):
     response = requests.get(url)
     data = response.json()
 
-    ExportDictToTxt('data.txt',data['rates'])
+    ExportDictToTxt('data_%s.txt'%currency_code,data['rates'])
 
     return data
 
